@@ -8,7 +8,6 @@
     gap: 20px;
     justify-content: space-between; /* para dae espaço entre a marca e o menu */
     align-items: center;
-    padding: 20px;
     box-sizing: border-box; /* para não aumentar o tamanho do elemento, n contando com o padding */
     padding: 20px;
     max-width: 1200px;
