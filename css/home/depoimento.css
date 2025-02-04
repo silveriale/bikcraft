@@ -44,6 +44,7 @@
 .depoimento p::after {
     content: "”";
 }
+/* fim da deco */
 
 @media (max-width: 800px) {
     .depoimento {
