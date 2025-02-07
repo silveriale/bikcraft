@@ -17,6 +17,8 @@
     color: var(--cor-p5);
     font: 600 1.125rem/1.35 "Poppins", sans-serif;
     max-width: max-content; /* para que o botão n fique com o tamanho total da tela, e sim com o tamanho q foi definido */
+    border: none;
+    cursor: pointer;
 }
 
 .botao:hover {
