@@ -51,19 +51,29 @@ perguntas.forEach(eventosPerguntas); // Para cada pergunta, chama a função eve
 
 // Galeria de bicicletas
 
-const galeria = document.querySelectorAll(".bicicleta-imagens img");
-const galeriaContainer = document.querySelector(".bicicleta-imagens");
+const galeria = document.querySelectorAll(".bicicleta-imagens img"); // Seleciona todas as imagens da galeria
+const galeriaContainer = document.querySelector(".bicicleta-imagens"); // Seleciona o container da galeria
 
 function trocarImagem(event) {
-	const img = event.currentTarget;
-	const media = matchMedia("(min-width: 1000px)").matches;
+	// Função para trocar a imagem
+	const img = event.currentTarget; // Pega a imagem clicada
+	const media = matchMedia("(min-width: 1000px)").matches; // Verifica se a tela tem no mínimo 1000px de largura
 	if (media) {
-		galeriaContainer.prepend(img);
+		// Se a tela tiver no mínimo 1000px de largura
+		galeriaContainer.prepend(img); // Move a imagem clicada para o início da galeria
 	}
 }
 
 function eventosGaleria(img) {
-	img.addEventListener("click", trocarImagem);
+	// Função para adicionar eventos à galeria
+	img.addEventListener("click", trocarImagem); // Adiciona o evento de clique à imagem
 }
 
-galeria.forEach(eventosGaleria);
+galeria.forEach(eventosGaleria); // Para cada imagem, chama a função eventosGaleria
+
+//Animação
+
+if (window.SimpleAnime) {
+	// Se o SimpleAnime existir na página
+	new SimpleAnime(); // Inicia a animação
+}
