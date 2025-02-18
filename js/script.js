@@ -29,20 +29,41 @@ parametros.forEach(ativarProduto); // Para cada parâmetro, chama a função ati
 
 // perguntas frequentes
 
-const perguntas = document.querySelectorAll(".perguntas button");
+const perguntas = document.querySelectorAll(".perguntas button"); // Seleciona todos os botões das perguntas
 
 function ativarPergunta(event) {
-	const pergunta = event.currentTarget;
-	const controls = pergunta.getAttribute("aria-controls");
-	const resposta = document.getElementById(controls);
+	// Função para ativar a pergunta
+	const pergunta = event.currentTarget; // Pega o botão clicado
+	const controls = pergunta.getAttribute("aria-controls"); // Pega o valor do atributo aria-controls
+	const resposta = document.getElementById(controls); // Pega o elemento com o ID do aria-controls
 
-	resposta.classList.toggle("ativa");
-	const ativa = resposta.classList.contains("ativa");
-	pergunta.setAttribute("aria-expanded", ativa);
+	resposta.classList.toggle("ativa"); // Adiciona ou remove a classe ativa da resposta
+	const ativa = resposta.classList.contains("ativa"); // Verifica se a resposta está ativa
+	pergunta.setAttribute("aria-expanded", ativa); // Atualiza o atributo aria-expanded do botão
 }
 
 function eventosPerguntas(pergunta) {
-	pergunta.addEventListener("click", ativarPergunta);
+	// Função para adicionar eventos às perguntas
+	pergunta.addEventListener("click", ativarPergunta); // Adiciona o evento de clique à pergunta
 }
 
-perguntas.forEach(eventosPerguntas);
+perguntas.forEach(eventosPerguntas); // Para cada pergunta, chama a função eventosPerguntas
+
+// Galeria de bicicletas
+
+const galeria = document.querySelectorAll(".bicicleta-imagens img");
+const galeriaContainer = document.querySelector(".bicicleta-imagens");
+
+function trocarImagem(event) {
+	const img = event.currentTarget;
+	const media = matchMedia("(min-width: 1000px)").matches;
+	if (media) {
+		galeriaContainer.prepend(img);
+	}
+}
+
+function eventosGaleria(img) {
+	img.addEventListener("click", trocarImagem);
+}
+
+galeria.forEach(eventosGaleria);
